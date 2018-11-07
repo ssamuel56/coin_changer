@@ -35,4 +35,10 @@ class Test_for_coin_changer < Minitest::Test
   def test_for_632
     assert_equal({:Quarter=>25, :Nickel=>1, :Penny=>2}, coinify(632))
   end
+  def test_for_3
+    assert_equal({:Penny=>3}, coinify(3))
+  end
+  def test_for_4969879533
+    assert_equal({}, coinify(4969879533))
+  end
 end
