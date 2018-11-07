@@ -21,7 +21,7 @@ end
 
 def coinify_loop(change)
   hash = Hash.new
-  coins = [[:Quarters, 25], [:Dimes, 10], [:Nickels, 5], [:Pennies, 1]]
+  coins = [[:Quarter, 25], [:Dime, 10], [:Nickel, 5], [:Penny, 1]]
   coins.each do |value|
     p value[0]
     if (change / value[1]) >= 1

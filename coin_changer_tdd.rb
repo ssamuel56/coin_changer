@@ -44,7 +44,10 @@ class Test_for_coin_changer < Minitest::Test
   def test_for_4969879533
     assert_equal({:Quarter=>198795181, :Nickel=>1, :Penny=>3}, coinify(4969879533))
   end
-  def test_for_mapping_one_penny
-    assert_equal({}, coinify_loop(25))
+  def test_for_loop_one_quarter
+    assert_equal({:Quarter=>1}, coinify_loop(25))
+  end
+  def test_for_loop_two_quarters
+    assert_equal({:Quarter=>2}, coinify_loop(50))
   end
 end
