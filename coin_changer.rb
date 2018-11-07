@@ -5,6 +5,9 @@ def coinify(change)
     if change / 25 >= 1
       hash[:Quarter] = quarter += 1
       change -= 25
+    elsif change / 10 >= 1
+      hash[:Dime] = dime += 1
+      change -= 10
     end
   end
   # p hash
