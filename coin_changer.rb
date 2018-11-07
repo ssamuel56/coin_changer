@@ -11,7 +11,7 @@ def coinify(change)
     elsif change / 5 >= 1
       hash[:Nickel] = nickel += 1
       change -= 5
-    elsif change / 1 == 1
+    elsif change / 1 >= 1
       hash[:Penny] = penny += 1
       change -= 1
     end
