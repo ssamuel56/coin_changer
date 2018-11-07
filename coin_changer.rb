@@ -18,3 +18,17 @@ def coinify(change)
   end
   return hash
 end
+
+def coinify_loop(change)
+  hash = Hash.new
+  coins = [[:Quarters, 25], [:Dimes, 10], [:Nickels, 5], [:Pennies, 1]]
+  coins.each do |value|
+    p value[0]
+    if (change / value[1]) >= 1
+      hash[value[0]] = change / value[1].to_i
+      change -= value[1] * hash[value[0]]
+      p hash
+    end
+  end
+  return hash
+end
