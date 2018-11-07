@@ -7,6 +7,6 @@ def coinify(change)
       change -= 25
     end
   end
-  p hash
+  # p hash
   return hash
 end
