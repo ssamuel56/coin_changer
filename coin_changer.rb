@@ -16,6 +16,5 @@ def coinify(change)
       change -= 1
     end
   end
-  # p hash
   return hash
 end
