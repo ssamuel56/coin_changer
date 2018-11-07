@@ -9,6 +9,6 @@ class Test_for_coin_changer < Minitest::Test
     assert_equal({:Quarter=>1}, coinify(25))
   end
   def test_for_two_quarters
-    assert_equal({}, coinify(50))
+    assert_equal({:Quarter=>2}, coinify(50))
   end
 end
