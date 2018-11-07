@@ -14,4 +14,7 @@ class Test_for_coin_changer < Minitest::Test
   def test_for_a_dime
     assert_equal({:Dime=>1}, coinify(10))
   end
+  def test_for_quarter_and_dime
+    assert_equal({}, coinify(35))
+  end
 end
