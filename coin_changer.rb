@@ -8,6 +8,9 @@ def coinify(change)
     elsif change / 10 >= 1
       hash[:Dime] = dime += 1
       change -= 10
+    elsif change / 5 >= 1
+      hash[:Nickel] = nickel += 1
+      change -= 5
     end
   end
   # p hash
