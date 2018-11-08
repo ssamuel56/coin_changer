@@ -60,6 +60,6 @@ class Test_for_coin_changer < Minitest::Test
     assert_equal({:Nickel=>1}, coinify_loop(5))
   end
   def test_for_loop_a_quarter_dime_and_nickel
-    assert_equal({}, coinify_loop(40))
+    assert_equal({:Quarter=>1, :Dime=>1, :Nickel=>1}, coinify_loop(40))
   end
 end
