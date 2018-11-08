@@ -27,7 +27,6 @@ def coinify_loop(change)
     if (change / value[1]) >= 1
       hash[value[0]] = change / value[1].to_i
       change -= value[1] * hash[value[0]]
-      p hash
     end
   end
   return hash

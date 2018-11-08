@@ -50,7 +50,10 @@ class Test_for_coin_changer < Minitest::Test
   def test_for_loop_two_quarters
     assert_equal({:Quarter=>2}, coinify_loop(50))
   end
-  def test_for_a_dime
+  def test_for_loop_a_dime
     assert_equal({:Dime=>1}, coinify_loop(10))
+  end
+  def test_for_loop_a_quarter_and_dime
+    assert_equal({}, coinify_loop(35))
   end
 end
