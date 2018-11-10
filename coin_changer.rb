@@ -6,8 +6,8 @@ def coinify(change)
       hash[change / 25 > 1 ? :Quarters : :Quarter] = (change / 25).to_i
       change -= (25 * hash[change / 25 > 1 ? :Quarters : :Quarter]).to_i
     elsif change / 10 >= 1
-      hash[:Dime] = dime += 1
-      change -= 10
+      hash[change / 10 > 1 ? :Dimes : :Dime] = (change / 10).to_i
+      change -= (10 * hash[change / 10 > 1 ? :Dimes : :Dime]).to_i
     elsif change / 5 >= 1
       hash[:Nickel] = nickel += 1
       change -= 5
