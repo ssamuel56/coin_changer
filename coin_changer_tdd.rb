@@ -74,4 +74,7 @@ class Test_for_coin_changer < Minitest::Test
   def test_for_reverse_4969879533
     assert_equal({:Quarter=>198795181, :Nickel=>1, :Penny=>3}, coinify_loop(4969879533))
   end
+  def test_for_else_not_correct_input
+    assert_equal("", coinify("String"))
+  end
 end
