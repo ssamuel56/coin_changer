@@ -65,16 +65,19 @@ class Test_for_coin_changer < Minitest::Test
   def test_for_loop_a_penny
     assert_equal({:Penny=>1}, coinify_loop(1))
   end
-  def test_for_reverse_2_quarters_a_dime_a_nickel_and_4_pennies
+  def test_for_loop_2_quarters_a_dime_a_nickel_and_4_pennies
     assert_equal({:Quarter=>2, :Dime=>1, :Nickel=>1, :Penny=>4}, coinify_loop(69))
   end
-  def test_for_reverse_632
+  def test_for_loop_632
     assert_equal({:Quarter=>25, :Nickel=>1, :Penny=>2}, coinify_loop(632))
   end
-  def test_for_reverse_4969879533
+  def test_for_loop_4969879533
     assert_equal({:Quarter=>198795181, :Nickel=>1, :Penny=>3}, coinify_loop(4969879533))
   end
   def test_for_else_not_correct_input
     assert_equal("Please use correct input", coinify("String"))
+  end
+  def test_for_loop_else_not_correct_input
+    assert_equal("Please use correct input", coinify_loop("String"))
   end
 end
