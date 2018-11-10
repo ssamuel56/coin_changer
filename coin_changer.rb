@@ -3,17 +3,17 @@ def coinify(change)
   quarter = 0; dime = 0; nickel = 0; penny = 0;
   while change > 0
     if change / 25 >= 1
-      hash[change / 25 > 1 ? :Quarters : :Quarter] = (change / 25).to_i
-      change -= (25 * hash[change / 25 > 1 ? :Quarters : :Quarter]).to_i
+      hash[change / 25 > 1 ? :Quarters : :Quarter] = (change / 25)
+      change -= (25 * hash[change / 25 > 1 ? :Quarters : :Quarter])
     elsif change / 10 >= 1
-      hash[change / 10 > 1 ? :Dimes : :Dime] = (change / 10).to_i
-      change -= (10 * hash[change / 10 > 1 ? :Dimes : :Dime]).to_i
+      hash[change / 10 > 1 ? :Dimes : :Dime] = (change / 10)
+      change -= (10 * hash[change / 10 > 1 ? :Dimes : :Dime])
     elsif change / 5 >= 1
       hash[:Nickel] = nickel += 1
       change -= 5
     elsif change / 1 >= 1
-      hash[:Penny] = penny += 1
-      change -= 1
+      hash[change / 1 > 1 ? :Pennies : :Penny] = (change / 1)
+      change -= (1 * hash[change / 1 > 1 ? :Pennies : :Penny])
     end
   end
   return hash
