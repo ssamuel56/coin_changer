@@ -15,9 +15,10 @@ def coinify(change)
         hash[change / 1 > 1 ? :Pennies : :Penny] = (change / 1)
         change -= (1 * hash[change / 1 > 1 ? :Pennies : :Penny])
       end
+        is_hash_full = true
     end
   end
-  return hash
+  is_hash_full ?  hash : "Please use correct input"
 end
 
 def coinify_loop(change)
