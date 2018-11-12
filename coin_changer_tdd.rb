@@ -48,7 +48,7 @@ class Test_for_coin_changer < Minitest::Test
     assert_equal({:Quarter=>1}, coinify_loop(25))
   end
   def test_for_loop_two_quarters
-    assert_equal({:Quarter=>2}, coinify_loop(50))
+    assert_equal({:Quarters=>2}, coinify_loop(50))
   end
   def test_for_loop_a_dime
     assert_equal({:Dime=>1}, coinify_loop(10))
@@ -62,20 +62,23 @@ class Test_for_coin_changer < Minitest::Test
   def test_for_loop_a_quarter_dime_and_nickel
     assert_equal({:Quarter=>1, :Dime=>1, :Nickel=>1}, coinify_loop(40))
   end
-  def test_for_two_dimes
-    assert_equal({}, coinify_loop(20))
+  def test_for_loop_two_dimes
+    assert_equal({:Dimes=>2}, coinify_loop(20))
+  end
+  def test_for_loop_two_dimes_and_quarter
+    assert_equal({:Quarters=>3, :Dimes=>2}, coinify_loop(95))
   end
   def test_for_loop_a_penny
     assert_equal({:Penny=>1}, coinify_loop(1))
   end
   def test_for_loop_2_quarters_a_dime_a_nickel_and_4_pennies
-    assert_equal({:Quarter=>2, :Dime=>1, :Nickel=>1, :Penny=>4}, coinify_loop(69))
+    assert_equal({:Quarters=>2, :Dime=>1, :Nickel=>1, :Pennies=>4}, coinify_loop(69))
   end
   def test_for_loop_632
-    assert_equal({:Quarter=>25, :Nickel=>1, :Penny=>2}, coinify_loop(632))
+    assert_equal({:Quarters=>25, :Nickel=>1, :Pennies=>2}, coinify_loop(632))
   end
   def test_for_loop_4969879533
-    assert_equal({:Quarter=>198795181, :Nickel=>1, :Penny=>3}, coinify_loop(4969879533))
+    assert_equal({:Quarters=>198795181, :Nickel=>1, :Pennies=>3}, coinify_loop(4969879533))
   end
   def test_for_else_not_correct_input
     assert_equal("Please use correct input", coinify("String"))
