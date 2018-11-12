@@ -86,4 +86,10 @@ class Test_for_coin_changer < Minitest::Test
   def test_for_loop_else_not_correct_input
     assert_equal("Please use correct input", coinify_loop("String"))
   end
+  def test_for_float
+    assert_equal("Please use correct input", coinify(1.2))
+  end
+  def test_for_negative_number
+    assert_equal("Please use correct input", coinify(-1))
+  end
 end
