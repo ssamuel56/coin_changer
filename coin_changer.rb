@@ -22,7 +22,12 @@ end
 
 def coinify_loop(change)
   hash = Hash.new
-  coins = [[:Quarter, 25], [:Dime, 10], [:Nickel, 5], [:Penny, 1]]
+  coins = [
+    [change/25 > 1 ? :Quarters : :Quarter, 25],
+    [(change % 25) / 10 > 1 ? :Dimes : :Dime, 10],
+    [:Nickel, 5],
+    [:Penny, 1]
+  ]
   if change.class == Integer then coins.each do |value|
       if (change / value[1]) >= 1
         hash[value[0]] = change / value[1]
